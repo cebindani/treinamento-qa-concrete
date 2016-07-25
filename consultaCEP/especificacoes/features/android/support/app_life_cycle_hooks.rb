@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'calabash-android/management/adb'
 require 'calabash-android/operations'
 

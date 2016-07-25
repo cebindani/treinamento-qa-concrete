@@ -1,43 +1,49 @@
-######### GIVEN #########
-Given(/^I (?:drag|dragged) the screen (down|up|left|right) until I see the element "(.*?)"$/) do |direction, element|
+# -*- encoding : utf-8 -*-
+######### DADO #########
+Dado(/^que Eu (?:arrastei|arrasto) a tela para (baixo|cima|esquerda|direita) até ver o elemento "(.*?)"$/) do |direction, element|
   @page.drag_until_element_is_visible_with_special_query direction.to_sym, element
 end
 
-Given(/^I am on a page that contains '(.*?)'$/) do |page_text|
+Dado(/^que Eu estou em uma página que contem '(.*?)'$/) do |page_text|
   @page.is_on_page? page_text
 end
 
-######### WHEN #########
+######### QUANDO #########
 
-When(/^I drag the screen (left|right|down|up) (\d+) times$/) do |direction, times|
+Quando(/^Eu arrasto a tela para (esquerda|direita|baixo|cima) (\d+) vezes$/) do |direction, times|
   @page.drag_for_specified_number_of_times(direction.to_sym, times.to_i)
 end
 
-When(/^I (?:touch|touched) the "(.*?)" element$/) do |element|
+Quando(/^Eu (?:clico|cliquei) no elemento "(.*?)"$/) do |element|
   @page.touch_screen_element element
 end
 
-When(/^I drag the screen (down|up|left|right)$/) do |direction|
+Quando(/^Eu arrasto a tela para (baixo|cima|esquerda|direita)$/) do |direction|
   @page.drag_to direction.to_sym
 end
 
-When(/^I restart the app$/) do
+Quando(/^(Eu |)reiniciar o aplicativo$/) do
   @page.restart_app
 end
 
-######### THEN #########
+######### ENTÃO #########
 
-Then(/^I (?:wait|waited) for the progress bar to vanish$/) do
+Então(/^Eu (?:espero|esperei) até a barra de progresso sumir$/) do
   # wait_for_progress is a method of the base class, so doesn't matter what is
   # the value of the @page variable, because all screens will have this method
   @page.wait_for_progress
 end
 
-Then(/^I should see the page '(.*?)'$/) do |page_text|
+Então(/^Eu deveria ver a página '(.*?)'$/) do |page_text|
   @page.is_on_page? page_text
 end
 
-Then(/^I should see a page that contains '(.*?)'$/) do |page_text|
+Então(/^Eu deveria ver uma página que contem '(.*?)'$/) do |page_text|
   @page.is_on_page? page_text
+end
+
+
+Então(/^faço um print$/) do
+  screenshot_embed
 end
 

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'calabash-android/management/app_installation'
 
 AfterConfiguration do

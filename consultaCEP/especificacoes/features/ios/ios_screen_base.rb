@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'calabash-cucumber/ibase'
 
 class IOSScreenBase < Calabash::IBase
@@ -76,10 +77,10 @@ class IOSScreenBase < Calabash::IBase
   def drag_to(direction, element = nil)
     element = 'scrollView' if element.nil?
 
-    direction = { x: 0, y: 100 } if direction == up
-    direction = { x: 0, y: -100 } if direction == down
-    direction = { x: 100, y: 0 } if direction == left
-    direction = { x: -100, y: 0 } if direction == right
+    direction = { x: 0, y: 100 } if direction == cima
+    direction = { x: 0, y: -100 } if direction == baixo
+    direction = { x: 100, y: 0 } if direction == esquerda
+    direction = { x: -100, y: 0 } if direction == direita
 
     flick(element, direction)
     sleep(1)

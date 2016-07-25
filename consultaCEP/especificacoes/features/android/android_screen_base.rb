@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'calabash-android/abase'
 
 class AndroidScreenBase < Calabash::ABase
@@ -69,13 +70,13 @@ class AndroidScreenBase < Calabash::ABase
     positions = [0, 0, 0, 0] # [ 'from_x', 'to_x', 'from_y', 'to_y' ]
 
     case(direction)
-    when :down
+    when :baixo
       positions = [30,30,60,30]
-    when :up
+    when :cima
       positions = [80,80,60,90]
-    when :left
+    when :esquerda
       positions = [90,20,80,80]
-    when :right
+    when :direita
       positions = [20,90,80,80]
     end
 

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # Choosing the platform using two environment vars that are mandatory for
 # calabash-ios console execution.
 # If they are not set, then we are executing a calabash android console
